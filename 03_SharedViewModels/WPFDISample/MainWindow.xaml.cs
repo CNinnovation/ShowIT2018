@@ -1,9 +1,6 @@
 ﻿using DISampleViewModels.ViewModels;
-using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
-using Windows.ApplicationModel.DataTransfer;
-using System;
-using Windows.System;
+using System.Windows;
 
 namespace WPFDISample
 {
@@ -16,6 +13,5 @@ namespace WPFDISample
         }
 
         public MainViewModel ViewModel => ApplicationServices.Instance.ServiceProvider.GetService<MainViewModel>();
-
     }
 }
