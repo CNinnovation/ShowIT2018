@@ -17,6 +17,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="Launch UWP" Click="OnLaunchUWP" Margin="12" />
         <Viewbox Grid.Row="1" Grid.Column="1">
             <Button Content="Show" Command="{Binding ViewModel.MessageCommand, Mode=OneTime}" />
         </Viewbox>
