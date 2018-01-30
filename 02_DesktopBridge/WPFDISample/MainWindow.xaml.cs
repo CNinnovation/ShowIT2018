@@ -1,7 +1,9 @@
 ﻿using DISampleViewModels.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Text;
 using System.Windows;
+using Windows.ApplicationModel;
 using Windows.System;
 
 namespace WPFDISample
@@ -12,6 +14,22 @@ namespace WPFDISample
         {
             InitializeComponent();
             DataContext = this;
+            SetPackageName();
+        }
+
+        private void SetPackageName()
+        {
+            try
+            {
+                Package package = Package.Current;
+                packageName.Text = package.DisplayName;
+                packageId.Text = package.Id.FullName;
+            }
+            catch (InvalidOperationException)
+            {
+                packageName.Text = "no package";
+            }
+
         }
 
         public MainViewModel ViewModel => ApplicationServices.Instance.ServiceProvider.GetService<MainViewModel>();

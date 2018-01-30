@@ -8,7 +8,8 @@
         Title="DI Sample" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
@@ -17,9 +18,11 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Content="Launch UWP" Click="OnLaunchUWP" Margin="12" />
-        <Viewbox Grid.Row="1" Grid.Column="1">
-            <Button Content="Show" Command="{Binding ViewModel.MessageCommand, Mode=OneTime}" />
+        <TextBlock x:Name="packageName" Grid.Row="0" Grid.ColumnSpan="3" Margin="8" />
+        <TextBlock x:Name="packageId" Grid.Row="1" Grid.ColumnSpan="3" Margin="8" />
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Button Content="Show" Command="{Binding ViewModel.MessageCommand, Mode=OneTime}" Margin="8" />
         </Viewbox>
+        <Button Grid.Row="3" Grid.Column="1" Content="Launch UWP" Click="OnLaunchUWP" Margin="8" />
     </Grid>
 </Window>
